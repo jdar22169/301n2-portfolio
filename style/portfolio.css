@@ -1,0 +1,38 @@
+body {
+  width:90%;
+  margin:auto;
+  background-color: gray;
+}
+
+h1 {
+  text-align: center;
+}
+
+aside {
+  float: left;
+  height:90%;
+  width: 20%;
+  margin: 1em;
+  background-color: white;
+}
+
+#projects {
+  float: left;
+  height:90%;
+  width: 70%;
+  margin:1em;
+  background-color: white;
+  text-align: center;
+}
+
+footer {
+  clear: both;
+  height: 10%;
+  width: 50%;
+  margin-left:25%;
+  margin-top: -10%;
+  padding:.5em;
+  text-align: center;
+  background-color: white;
+
+}
