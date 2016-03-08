@@ -16,13 +16,11 @@ Project.prototype.toHtml= function() {
   $newProject.find('h3:first').text(this.projectTitle);
   $newProject.find('p a').attr('href', this.projectURL);
   $newProject.find('.projectDescription').html(this.body);
-  $newProject.find('time[pubdate]').attr('datetime', this.publishedDate)
-  $newProject.find('time[pubdate]').attr('title', this.publishedDate)
-  $newProject.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedDate))/60/60/24/1000) + ' days ago')
+  $newProject.find('time[pubdate]').attr('datetime', this.publishedDate);
+  $newProject.find('time[pubdate]').attr('title', this.publishedDate);
+  $newProject.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedDate))/60/60/24/1000) + ' days ago');
   $newProject.append('<hr>');
   return $newProject;
-
-
 };
 
 rawData.sort(function(a,b) {
@@ -34,5 +32,5 @@ rawData.forEach(function(ele) {
 });
 
 projects.forEach(function(a){
-  $('#projects').append(a.toHtml())
+  $('#projects').append(a.toHtml());
 });
