@@ -13,6 +13,7 @@ Project.prototype.toHtml= function() {
   var $newProject = $('article.template').clone();
   $newProject.removeClass('template');
   $newProject.attr('data-category', this.projectCategory);
+  $newProject.attr('data-attribute', this.projectTitle);
   $newProject.find('h3:first').text(this.projectTitle);
   $newProject.find('p a').attr('href', this.projectURL);
   $newProject.find('.projectDescription').html(this.body);
