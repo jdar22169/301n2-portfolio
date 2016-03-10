@@ -1,0 +1,15 @@
+hr {
+  margin-left: 9em;
+  width:70%;
+}
+
+/*Text Style */
+p {
+  font-size:1em;
+  color: bold black;
+}
+
+/*Link Style */
+a {
+  text-decoration: none;
+}
