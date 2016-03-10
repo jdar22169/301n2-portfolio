@@ -1,6 +1,6 @@
 hr {
-  margin-left: 9em;
-  width:70%;
+  position:center;
+  width:40%;
 }
 
 /*Text Style */
@@ -12,4 +12,11 @@ p {
 /*Link Style */
 a {
   text-decoration: none;
+}
+
+@media screen and (min-width:900px) {
+  hr {
+    position:center;
+    width:80%;
+  };
 }

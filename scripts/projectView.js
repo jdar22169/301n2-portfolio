@@ -1,15 +1,11 @@
 var projectView={};
 
-//projectView.titleList = function() {
-  //$('article').each(function() {
-
 
 projectView.navBar = function() {
-  $('#nav-bar').on('click', 'li', function() {
+  $('#nav-bar').on('click', '.tab', function() {
     $('.tab-content').hide();
     $('#' + $(this).data('content')).fadeIn();
   });
-
   $('#nav-bar.tab:first').click();
 };
 
@@ -26,7 +22,6 @@ projectView.setTeasers = function() {
 };
 
 $(document).ready(function(){
-  //projectView.titleList();
   projectView.navBar();
   projectView.setTeasers();
 });
