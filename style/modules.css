@@ -47,11 +47,12 @@ aside li {
 
 
 
-footer {
+#social {
   clear: both;
   height: 10%;
   width: 80%;
   margin-left:1em;
+  margin-top:8em;
   padding:.5em;
   text-align: center;
   background-color: #cceae7;
@@ -84,10 +85,10 @@ footer {
     }
 
     #projects {
-      float: left;
+      float: right;
       height:70%;
-      width: 70%
-      margin:1em;
+      width: 70%;
+      margin-right:5.5%;
       background-color: #99d5cf;
       text-align:center;
     }
