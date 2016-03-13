@@ -1,12 +1,28 @@
 hr {
   position:center;
   width:40%;
+  border-color: black;
 }
 
 /*Text Style */
-p {
+p, li {
   font-size:1em;
-  color: bold black;
+  font-family: 'Merriweather', sans-serif;
+}
+
+h1{
+  font-family: 'Oswald', serif;
+  font-size:1.999em;
+}
+
+h2 {
+  font-family: 'Oswald', serif;
+  font-size:1.999em;
+}
+
+h3 {
+  font-family: 'Oswald', serif;
+  font-size:1.414em;
 }
 
 /*Link Style */
@@ -15,8 +31,14 @@ a {
 }
 
 @media screen and (min-width:900px) {
+
+  h1{
+    font-family: 'Oswald', serif;
+    font-size:3.998em;
+  }
+
   hr {
     position:center;
     width:80%;
-  };
+  }
 }

@@ -4,8 +4,9 @@ body {
   background-color: #32ab9f;
 }
 
-h1 {
+h1, h2, h3 {
   text-align: center;
+  text-decoration: underline;
 }
 
 aside {
@@ -19,10 +20,6 @@ aside li {
   padding-left:.5em;
 }
 
-
-.template {
-  display:none;
-}
 
 #about {
   float:left;
@@ -75,6 +72,10 @@ aside li {
       background-color: #cceae7;
     }
 
+    aside li {
+      display:block;
+    }
+
     #about {
       float:left;
       height:20%;
@@ -89,6 +90,7 @@ aside li {
       height:70%;
       width: 70%;
       margin-right:5.5%;
+      padding-bottom:5em;
       background-color: #99d5cf;
       text-align:center;
     }
@@ -96,8 +98,7 @@ aside li {
     footer {
       clear: both;
       height: 10%;
-      width: 50%;
-      margin-left:25%;
+      width: 70%;
       margin-top: -10%;
       padding:.5em;
       text-align: center;

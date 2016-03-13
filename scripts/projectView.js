@@ -1,7 +1,29 @@
 var projectView={};
 
-projectView.home = function() {
-  $('#nav-bar .all').on('click', function() {
+projectView.titleMenu = function() {
+  $('.project').each(function() {
+    var title= $(this).find('#projTitle').text();
+    var optionTag = '<option value="' + title + '">' + title + '</option>';
+    $('#title-menu').append(optionTag);
+
+
+  });
+};
+
+projectView.chooseTitle = function() {
+  $('#title-menu').on('change', function() {
+    if ($(this).val()) {
+      $('.project').hide();
+      $('.project[data-title="' + $(this).val() + '"]').fadeIn();
+    } else {
+      $('.project').fadeIn();
+
+    };
+  });
+};
+
+projectView.homeTab = function() {
+  $('#nav-bar .allContent').on('click', function() {
     $('.tab-content').show();
 
   });
@@ -14,11 +36,11 @@ projectView.navBar = function() {
     $('#' + $(this).data('content')).fadeIn();
 
   });
-  $('#nav-bar .all').click();
+  $('#nav-bar .allContent').click();
 };
 
 projectView.setTeasers = function() {
-  $('.projectDescription *:nth-of-type(n+1)').hide();
+  $('.projectDescription *:nth-of-type(n+2)').hide();
   $('#projects').on('click', function(event) {
     var $eventTarget = $(event.target);
     event.preventDefault();
@@ -30,7 +52,9 @@ projectView.setTeasers = function() {
 };
 
 $(document).ready(function(){
-  projectView.home();
+  projectView.titleMenu();
+  projectView.chooseTitle();
+  projectView.homeTab();
   projectView.navBar();
   projectView.setTeasers();
 });
