@@ -6,22 +6,15 @@ function Project (proj) {
   this.projectCategory = proj.projectCategory;
   this.publishedDate = proj.publishedDate;
   this.projectURL = proj.projectURL;
-  this.body=proj.body;
+  this.body = proj.body;
 };
 
 Project.prototype.toHtml= function() {
-  var $newProject = $('article.template').clone();
-  $newProject.removeClass('template');
-  $newProject.attr('data-category', this.projectCategory);
-  $newProject.attr('data-attribute', this.projectTitle);
-  $newProject.find('h3:first').text(this.projectTitle);
-  $newProject.find('p a').attr('href', this.projectURL);
-  $newProject.find('.projectDescription').html(this.body);
-  $newProject.find('time[pubdate]').attr('datetime', this.publishedDate);
-  $newProject.find('time[pubdate]').attr('title', this.publishedDate);
-  $newProject.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedDate))/60/60/24/1000) + ' days ago');
-  $newProject.append('<hr>');
-  return $newProject;
+  var template = Handlebars.compile($('#projectsTemplate').html());
+  this.daysAgo = parseInt((new Date() - new Date(this.publishedDate))/60/60/24/1000);
+  this.publishStatus = this.publishedDate ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
+  return template(this);
+
 };
 
 rawData.sort(function(a,b) {

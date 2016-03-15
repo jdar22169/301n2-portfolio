@@ -4,7 +4,7 @@ var rawData = [
     projectCategory:'Movie',
     publishedDate: '2014-02-01',
     projectURL:'http://www.imdb.com/',
-    body:'</p>I really had nothing to do with IMDB. This is practice</p><p>AHH</p><p>BO</p>',
+    body:'<p>I really had nothing to do with IMDB. This is practice.AHH</p> <p>BO</p>',
 
   },
   {
@@ -12,6 +12,6 @@ var rawData = [
     projectCategory:'Sports',
     publishedDate: '2015-11-10',
     projectURL: 'http://www.espn.com/',
-    body:'<p>I had nothing to do with the production of this website.</p><p> Go Warriors</p><p>le</p>',
+    body:'<p>I had nothing to do with the production of this website.</p><p>Go Warriors</p><p>Practice</p>',
   },
 ];
