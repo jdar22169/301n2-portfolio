@@ -13,11 +13,12 @@ projectView.titleMenu = function() {
 projectView.chooseTitle = function() {
   $('#title-menu').on('change', function() {
     if ($(this).val()) {
+      $('#about').hide();
+      $('#contact').hide();
       $('.project').hide();
       $('.project[data-title="' + $(this).val() + '"]').fadeIn();
     } else {
       $('.project').fadeIn();
-
     };
   });
 };
@@ -51,10 +52,14 @@ projectView.setTeasers = function() {
   });
 };
 
-$(document).ready(function(){
+projectView.initIndexPage = function() {
+  Project.all.forEach(function(a){
+    $('#projects').append(a.toHtml());
+  });
+
   projectView.titleMenu();
   projectView.chooseTitle();
   projectView.homeTab();
   projectView.navBar();
   projectView.setTeasers();
-});
+};

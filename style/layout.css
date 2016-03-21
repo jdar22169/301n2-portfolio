@@ -1,6 +1,13 @@
 body {
   width:90%;
   margin:auto;
+  background-color: #32ab9f;
+
+}
+
+aside, #about, #projects, #contact {
+  border-color:black;
+  border-style: solid;
 }
 
 aside {
@@ -11,7 +18,16 @@ aside {
 
 aside li {
   display:inline-block;
-  padding-left:.5em;
+  padding-left:.3em;
+}
+
+
+#nav-bar #contact {
+  padding-left:1em;
+}
+
+#title-menu {
+  width:50%;
 }
 
 
@@ -36,9 +52,13 @@ aside li {
   text-align:center;
 }
 
+#projects img {
+  max-width:100%;
+}
 
 
-#social {
+
+#contact {
   clear: both;
   height: 10%;
   width: 80%;
@@ -61,7 +81,7 @@ aside li {
     aside {
       float: left;
       height:50%;
-      width: 20%;
+      width: 30%;
       margin: 1em;
       background-color: #cceae7;
     }
@@ -73,30 +93,35 @@ aside li {
     #about {
       float:left;
       height:20%;
-      width:70%;
-      margin:1em;
+      width:60%;
       text-align: center;
       background-color: #99d5cf;
     }
 
     #projects {
-      float: right;
-      height:70%;
-      width: 70%;
-      margin-right:5.5%;
+      clear:both;
+      height:40%;
+      width: 90%;
+      margin-right:4.5%;
       padding-bottom:5em;
       background-color: #99d5cf;
-      text-align:center;
+      text-align:left;
+      padding-left: 1em;
     }
 
-    footer {
+    #projects h3 {
+      text-align:left;
+    
+    }
+
+    #contact {
       clear: both;
       height: 10%;
       width: 70%;
       margin-top: -10%;
       padding:.5em;
       text-align: center;
-      background-color: #cceae7;
+      background-color: #99d5cf;
     }
   }
 
