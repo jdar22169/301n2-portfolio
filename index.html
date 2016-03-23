@@ -20,6 +20,11 @@
          <button onclick="projectView.setTeasers()" class="more">More</button>
          </article>
     </script>
+    <script id="funFactsTemplate" type="text/x-handlebars-template">
+       <article class="funFacts">
+         <p> I have published {{numProjects}} since 2014. </p>
+       </article>
+    </script>
 </head>
 <body>
     <header>
@@ -41,6 +46,9 @@
         <section id="about" class="tab-content">
            <h3> About Me </h3>
            <p>Welcome to my portfolio. Practice. Practice. Practice.</p>
+           <section id="funFacts">
+             <h2> Fun Facts </h2>
+           </section>
         </section>
         <section id="projects" class="tab-content">
            <h2> Projects </h2>
