@@ -1,30 +1,55 @@
+(function(module) {
+  function Project (proj) {
+    this.projectTitle = proj.projectTitle;
+    this.projectCategory = proj.projectCategory;
+    this.publishedDate = proj.publishedDate;
+    this.projectURL = proj.projectURL;
+    this.body = proj.body;
+  };
 
-var projects=[];
+  Project.all= [];
 
-function Project (proj) {
-  this.projectTitle = proj.projectTitle;
-  this.projectCategory = proj.projectCategory;
-  this.publishedDate = proj.publishedDate;
-  this.projectURL = proj.projectURL;
-  this.body = proj.body;
-};
+  Project.prototype.toHtml= function() {
+    var template = Handlebars.compile($('#projectsTemplate').html());
+    this.daysAgo = parseInt((new Date() - new Date(this.publishedDate))/60/60/24/1000);
+    this.publishStatus = this.publishedDate ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
+    return template(this);
 
-Project.prototype.toHtml= function() {
-  var template = Handlebars.compile($('#projectsTemplate').html());
-  this.daysAgo = parseInt((new Date() - new Date(this.publishedDate))/60/60/24/1000);
-  this.publishStatus = this.publishedDate ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
-  return template(this);
+  };
 
-};
+  Project.loadAll = function(projectData) {
 
-rawData.sort(function(a,b) {
-  return (new Date(b.publishedDate)) - (new Date(a.publishedDate));
-});
+    projectData.sort(function(a,b) {
+      return (new Date(b.publishedDate)) - (new Date(a.publishedDate));
+    });
 
-rawData.forEach(function(ele) {
-  projects.push(new Project(ele));
-});
+    Project.all= projectData.map(function(ele) {
+      return new Project(ele);
+    });
 
-projects.forEach(function(a){
-  $('#projects').append(a.toHtml());
-});
+  };
+
+
+
+  Project.fetchAll = function() {
+    if (localStorage.projectData) {
+      Project.loadAll(JSON.parse(localStorage.projectData));
+      projectView.initIndexPage();
+    } else {
+      $.getJSON('../data/projectData.json', function(projectData) {
+        Project.loadAll(projectData);
+        localStorage.setItem('projectData', JSON.stringify(projectData));
+        projectView.initIndexPage();
+      });
+    }
+  };
+
+  Project.numProjects = function() {
+    return Project.all.map(function(project){
+      return (new Date(project.publishedDate)).getFullYear();
+
+    });
+  };
+
+  module.Project= Project;
+})(window);
