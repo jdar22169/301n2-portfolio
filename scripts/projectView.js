@@ -1,13 +1,11 @@
 (function(module){
-  var projectView={};
+  var projectView = {};
 
   projectView.titleMenu = function() {
     $('.project').each(function() {
-      var title= $(this).find('#projTitle').text();
-      var optionTag = '<option value="' + title + '">' + title + '</option>';
+      var title = $(this).find('#projTitle').text();
+      var optionTag = '<option value = "' + title + '">' + title + '</option>';
       $('#title-menu').append(optionTag);
-
-
     });
   };
 
@@ -17,7 +15,7 @@
         $('#about').hide();
         $('#contact').hide();
         $('.project').hide();
-        $('.project[data-title="' + $(this).val() + '"]').fadeIn();
+        $('.project[data-title = "' + $(this).val() + '"]').fadeIn();
       } else {
         $('.project').fadeIn();
       };
@@ -27,16 +25,13 @@
   projectView.homeTab = function() {
     $('#nav-bar .allContent').on('click', function() {
       $('.tab-content').show();
-
     });
   };
 
   projectView.navBar = function() {
-
     $('#nav-bar').on('click', '.tab', function() {
       $('.tab-content').hide();
       $('#' + $(this).data('content')).fadeIn();
-
     });
     $('#nav-bar .allContent').click();
   };
@@ -57,14 +52,12 @@
     Project.all.forEach(function(a){
       $('#projects').append(a.toHtml());
     });
-
+    $('#fact').text(Project.numProjects().length);
     projectView.titleMenu();
     projectView.chooseTitle();
     projectView.homeTab();
     projectView.navBar();
     projectView.setTeasers();
-
-
   };
-  module.projectView= projectView;
+  module.projectView = projectView;
 })(window);
