@@ -12,7 +12,7 @@
   Project.prototype.toHtml = function() {
     var template = Handlebars.compile($('#projectsTemplate').html());
     this.daysAgo = parseInt((new Date() - new Date(this.publishedDate))/60/60/24/1000);
-    this.publishStatus = this.publishedDate ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
+    this.publishStatus = this.publishedDate ? 'published ' + this.daysAgo + ' days ago' : 'Not yet published';
     return template(this);
 
   };
