@@ -20,12 +20,8 @@
          <button onclick="projectView.setTeasers()" class="more">More</button>
          </article>
     </script>
-    <script id="funFactsTemplate" type="text/x-handlebars-template">
-       <article class="funFacts">
-         <p> I have published {{numProjects}} since 2014. </p>
-       </article>
-    </script>
 </head>
+
 <body>
     <header>
         <h1> Maddie's Portfolio </h1>
@@ -35,19 +31,19 @@
            <li class="allContent"><a href="#"> Home</a></li>
            <li class="tab" data-content="about"><a href="#"> About</a> </li>
            <li class="tab" data-content="projects"><a href="#"> Projects</a> </li>
-              <select id= "title-menu">
+              <select id="title-menu">
                 <option value="">Pick by Title</option>
               </select>
            <li class="tab" data-content="contact"><a href="#"> Contact</a> </li>
         </ul>
-
     </aside>
     <main>
         <section id="about" class="tab-content">
-           <h3> About Me </h3>
+           <h2> About Me </h2>
            <p>Welcome to my portfolio. Practice. Practice. Practice.</p>
            <section id="funFacts">
              <h2> Fun Facts </h2>
+             <p> I have published <span id="fact"></span> projects since 2014. </p>
            </section>
         </section>
         <section id="projects" class="tab-content">
@@ -58,9 +54,9 @@
         <p> CONTACT INFORMATION: <a href="https://github.com/jdar22169">GitHub</a> and
         <a href="https://www.linkedin.com/in/madelinemow">LinkedIn</a></p>
     </footer>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-    <!--<script src="scripts/projectdata.json"></script>-->
     <script src="scripts/portfolio.js"></script>
     <script src="scripts/projectView.js"></script>
     <script> Project.fetchAll(); </script>

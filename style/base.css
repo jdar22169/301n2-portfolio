@@ -1,11 +1,8 @@
-
-
 body {
   line-height: 1.5;
   font-size: 100%;
   background-color: #32ab9f;
 }
-
 
 /*TEXT STYLES
 =======================================*/
@@ -28,12 +25,9 @@ h1, h2 {
   font-size:1.999em;
 }
 
-
 h3 {
   font-size:1.414em;
 }
-
-
 
 /*LINK STYLES
 =======================================*/
@@ -56,6 +50,5 @@ a:visited {
   h1{
     font-size:3.998em;
   }
-
 
 }
