@@ -1,8 +1,9 @@
 (function(module) {
   var aboutController = {};
   aboutController.index = function() {
-    $('.tab-content').hide();
-    $('#about').show();
+    $('#about').show().siblings().hide();
+    $('#contact').hide();
+    repo.request(repoView.index);
   };
   module.aboutController = aboutController;
 })(window);
