@@ -3,7 +3,7 @@
   repo.all = [];
   repo.request = function(callback) {
     $.get('/github/users/jdar22169/repos', function(data) {
-      repos.all = data;
+      repo.all = data;
     })
     .done(callback);
   };
