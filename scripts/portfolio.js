@@ -26,15 +26,15 @@
     });
   };
 
-  Project.fetchAll = function() {
+  Project.fetchAll = function(callback) {
     if (localStorage.projectData) {
       Project.loadAll(JSON.parse(localStorage.projectData));
-      projectView.initIndexPage();
+      callback();
     } else {
       $.getJSON('../data/projectData.json', function(projectData) {
         Project.loadAll(projectData);
         localStorage.setItem('projectData', JSON.stringify(projectData));
-        projectView.initIndexPage();
+        callback();
       });
     }
   };
