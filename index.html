@@ -10,14 +10,14 @@
     <link rel="stylesheet", href="style/module.css">
 
     <script id="projectsTemplate" type="text/x-handlebars-template">
-       <article class="project" data-title="{{projectTitle}}" data-category="{{projectCategory}}">
+       <article class="project" data-id="{{id}}" data-title="{{projectTitle}}" data-category="{{projectCategory}}">
          <header>
            <a href=<h3 id="projTitle"> {{projectTitle}}</h3>
            <p><a href="{{projectURL}}">Website to project</a></p>
            <p><time pubdate datetime="2000-01-01">{{publishStatus}}</time></p>
          </header>
          <section class="projectDescription">{{{body}}}</section>
-         <button onclick="projectView.setTeasers()" class="more">More</button>
+         <a href="/projects/{{id}}" class="more">More</a>
          </article>
     </script>
 
@@ -31,6 +31,10 @@
         </li>
       </article>
     </script>
+
+    <script id="titleFilterTemplate" type="text/x-handlebars-template">
+      <option value="{{title}}">{{title}}</option>
+    </script>
 </head>
 
 <body>
@@ -41,7 +45,7 @@
         <ul>
            <li class="allContent"><a href="/"> Home</a></li>
            <li class="tab" data-content="about"><a href="/about"> About</a> </li>
-           <li class="tab" data-content="projects"><a href="/projects"> Projects</a> </li>
+           <li class="tab" id="projectTab" data-content="projects"><a href="/projects"> Projects</a> </li>
               <select id="title-menu">
                 <option value="">Pick by Title</option>
               </select>
@@ -65,6 +69,7 @@
         </section>
         <section id="projects" class="tab-content">
            <h2> Projects </h2>
+           <article> </article>
         </section>
     </main>
     <footer id="contact" class="tab-content">
@@ -74,15 +79,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src="vendors/scripts/page.js"></script>
-    <script src="scripts/githubToken.js"></script>
+
     <script src="scripts/portfolio.js"></script>
     <script src="scripts/projectView.js"></script>
+    <script src="scripts/homeIndex.js"></script>
+    <script src="scripts/projectsController.js"></script>
     <script src="scripts/repos.js"></script>
     <script src="scripts/repoView.js"></script>
-    <script src="scripts/homeController.js"></script>
+
     <script src="scripts/aboutController.js"></script>
-    <script src="scripts/projectsController.js"></script>
+
     <script src="scripts/contactController.js"></script>
+    <script src="scripts/homeController.js"></script>
     <script src="scripts/route.js"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
  [
   {
+    "id":"0",
     "projectTitle": "Hope I Get This Right",
     "projectCategory": "Movie",
     "publishedDate": "2014-02-01",
@@ -8,6 +9,7 @@
 
   },
   {
+    "id":"1",
     "projectTitle": "Take Two",
     "projectCategory": "Sports",
     "publishedDate": "2015-11-10",
@@ -16,6 +18,7 @@
   },
 
   {
+    "id":"2",
     "projectTitle": "Practicing Reduce Function",
     "projectCategory": "Practice",
     "publishedDate": "2013-02-01",
