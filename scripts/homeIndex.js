@@ -5,6 +5,8 @@
     Project.all.forEach(function(a){
       $('#projects').append(a.toHtml());
     });
+    projectView.titleMenu();
+    projectView.chooseTitle();
   };
   module.homeView = homeView;
 })(window);

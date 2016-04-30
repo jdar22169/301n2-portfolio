@@ -2,8 +2,6 @@
   var projectsController = {};
   projectsController.index = function(ctx, next) {
     projectView.index(ctx.project);
-    // $('.tab-content').hide();
-    // $('#projects').show();
   };
 
   projectsController.loadProjectSection = function(ctx, next) {
@@ -20,38 +18,21 @@
   };
 
   projectsController.loadById = function(ctx, next) {
-    var projectData = function(project) {
-      ctx.projects = project;
-      next();
-    };
+
     if(($('data-id').val()) === ctx.params.id) {
-      return projectData;
+      return ctx.project;
     }
+    next();
   };
 
   projectsController.loadTitle = function(ctx,next) {
-    ctx.projects = Project.all;
-    console.log(ctx.projects);
-    // console.log('load try');
-    // var titleData = function() {
-    //   ctx.projects
-    // }
-    //
-    if(($('#title-menu').val()) === ctx.params.projectTitle) {
-      console.log('working');
-      console.log(ctx.projects);
-      console.log(ctx.params.projectTitle);
-      $('#projects article').remove();
-      $('#projects article').append(
-
-
-    } else {
-      console.log('not working');
+    ctx.project = Project.all;
+    if(ctx.params.projectTitle) {
+      localStorage.getItem('projectData');
+      $('#project article').remove();
+      return ctx.params.projectTitle;
     }
-
   };
-
-
 
   module.projectsController = projectsController;
 })(window);

@@ -16,7 +16,6 @@
   };
 
   homeController.index = function() {
-    console.log('index showing');
     homeView.index();
 
   };
